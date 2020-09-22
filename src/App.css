@@ -1,3 +1,32 @@
+.headerClass{
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+body{
+  background-color: #cee1fd;
+}
+
+#footer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  max-width: 50%;
+}
+
+.item{
+  border-radius: 50px;
+background: linear-gradient(145deg, #b9cbe4, #dcf1ff);
+box-shadow:  12px 12px 24px #afbfd7,
+             -12px -12px 24px #edffff;
+   width: 50px;
+   height: 50px;
+   margin: auto;
+   padding: 5px;
+   display: inline-flex;
+}
+
 .App {
   text-align: center;
 }

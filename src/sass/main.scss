@@ -1,0 +1,113 @@
+@import './variables';
+@import './resets';
+
+.navbar{
+    position: relative;
+    width: 100%;
+    padding: 0.5em;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: white;
+}
+
+.navbar_contact{
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+}
+
+.navbar_button--contact{
+    margin: 0.5em;
+
+    img{
+        border-radius: 100%;
+    }
+}
+
+.navbar_button--regen{
+    margin-right: 0.5em;
+    font-size: 1.4rem;
+    border: none;
+
+    background-color: black;
+    color: white;
+}
+
+.navbar_button--solve{
+    border: none;
+    background-color: rgba(0,0,0,0);
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+.main_timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    padding: 0.5em;
+}
+
+.main_area{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main_numpad{
+    margin: auto;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+
+    span{
+        border: 1px solid black;
+        border-radius: 100%;
+        margin: 0.5em;
+        font-size: 1.5rem;
+        min-width: 3rem;
+        min-height: 3rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover{
+            background-color: black;
+            color: white;
+        }
+    }
+}
+
+.main_board{
+    margin: auto;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    span{
+        font-size: 1.5rem;
+        min-width: 3rem;
+        min-height: 3rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:active{
+            background-color: black;
+            color: white;
+        }
+
+        &:nth-child(n){
+            border: 1px solid black;
+        }
+    }
+}
