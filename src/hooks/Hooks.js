@@ -27,4 +27,32 @@ const manageState = () => {
     })
 }*/
 
-export default sudoku;
+const useTimer = () => {
+    const [timer, setTimer] = useState({minutes: 0, seconds: 0});
+    let interval;
+    console.log(1)
+
+    const handleClick = () => {
+        console.log(2)
+        clearInterval(interval)
+        setTimer({minutes: 0, seconds: 0})
+    }
+
+    useEffect(() => {
+        return interval = setInterval(() => {
+            let s = timer.seconds;
+            let m = timer.minutes;
+            s++;
+            if (s>=60) {
+                m++; s=0;
+            }
+            setTimer({minutes: m, seconds: s});
+        }, 1000);
+      }, []);
+    return {timer}
+  }
+export default sudoku
+  module.exports = {
+      sudoku: sudoku,
+      useTimer: useTimer
+  }

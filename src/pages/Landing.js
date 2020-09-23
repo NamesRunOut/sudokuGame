@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../sass/main.css'
+import '../css/main.css'
 
 import Navbar from '../layout/Navbar'
 import Main from '../layout/Main'

@@ -1,9 +1,12 @@
 import React from 'react'
 
+//import {useTimer} from '../../hooks/Hooks'
+
 const Timer = () => {
+  console.log(useTimer)
   return(
-      <div>00:00</div>
+      <div></div>
   )
 }
 
-export default Timer;
+export default Timer;//{useTimer.timer.minutes}:{useTimer.timer.seconds}
