@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
-import sudoku from '../../hooks/Hooks.js'
+import sudoku from '../../hooks/Sudoku.js'
 
 const Board = () => {
 const [current, setCurrent] = useState(null);

@@ -1,11 +1,9 @@
 import React from 'react'
 
-import {useTimer} from '../../hooks/Hooks'
-
-const Solve = () => {
+const Solve = ({stopTime}) => {
 
     return (
-        <button className="navbar_button--solve" onClick={useTimer}>Solve</button>
+        <button className="navbar_button--solve" onClick={stopTime}>Solve</button>
     )
 }
 

@@ -4,11 +4,12 @@ import Contact from '../components/buttons/Contact'
 import Regen from '../components/buttons/Regen'
 import Solve from '../components/buttons/Solve'
 
-const Navbar = () => {
+const Navbar = (props) => {
+
     return (
         <div className="navbar">
-            <Regen />
-            <Solve />
+            <Regen resetTime={props.resetTime} startTime={props.startTime} />
+            <Solve stopTime={props.stopTime} />
             <Contact className="navbar_contact" aclass="navbar_button--contact" />
         </div>
     )
