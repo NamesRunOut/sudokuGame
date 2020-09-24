@@ -4,11 +4,11 @@ import Timer from '../components/board/Timer'
 import Board from '../components/board/Board'
 import Numpad from '../components/board/Numpad'
 
-const Main = () => {
+const Main = (props) => {
     return (
         <div className="main">
             <div className="main_timer">
-                <Timer />
+                <Timer time={props.time} />
             </div>
 
             <div className="main_area">

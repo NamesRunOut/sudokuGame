@@ -1,8 +1,8 @@
-import React from 'react'
+import React  from 'react'
 
-const Timer = () => {
+const Timer = ({time}) => {
   return(
-      <div>00:00</div>
+      <div>{String(Math.floor(time/60)).padStart(2, '0')}:{String(time%60).padStart(2, '0')}</div>
   )
 }
 
