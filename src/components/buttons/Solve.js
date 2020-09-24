@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Solve = ({stopTime}) => {
+const Solve = ({stop}) => {
 
     return (
-        <button className="navbar_button--solve" onClick={stopTime}>Solve</button>
+        <button className="navbar_button--solve" onClick={stop}>Solve</button>
     )
 }
 

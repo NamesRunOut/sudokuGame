@@ -8,8 +8,8 @@ const Navbar = (props) => {
 
     return (
         <div className="navbar">
-            <Regen resetTime={props.resetTime} startTime={props.startTime} />
-            <Solve stopTime={props.stopTime} />
+            <Regen start={props.start} reset={props.reset} />
+            <Solve stop={props.stop} />
             <Contact className="navbar_contact" aclass="navbar_button--contact" />
         </div>
     )

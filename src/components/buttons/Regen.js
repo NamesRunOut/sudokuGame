@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Regen = ({resetTime, startTime}) => {
+const Regen = ({reset, start}) => {
 
     const clickHandler = () => {
-        resetTime();
-        startTime();
+        reset();
+        start();
     }
 
     return (

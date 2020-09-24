@@ -8,7 +8,8 @@ import Main from '../layout/Main'
 import Timer from '../hooks/Timer'
 
 function Landing(){
-  /*  const [time, setTimer] = useState(0);
+   // const {time, reset, start, stop} = Timer()
+    const [time, setTimer] = useState(0);
     const [isActive, setIsActive] = useState(true);
     Timer(time, setTimer, isActive)
 
@@ -23,16 +24,16 @@ function Landing(){
 
     const stop = () => {
         setIsActive(false);
-    }*/
+    }
 
     return(
         <div>
             <Navbar 
-                setTimer={setTimer}
-                resetTime={reset}
-                startTime={start}
-                stopTime={stop} />
-            <Main 
+                stop={stop} 
+                start={start}
+                reset={reset}
+                />
+            <Main
                 time={time} />
         </div>
     )

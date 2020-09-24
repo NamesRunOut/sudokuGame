@@ -1,6 +1,23 @@
 @import './variables';
 @import './resets';
 
+input, span{
+    font-size: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+}
+
+input{
+    text-align: center;
+    caret-color: transparent;
+    border: 1px solid black;
+    box-shadow: none;
+
+    &:active{
+        background-color: black;
+    }
+}
+
 .navbar{
     position: relative;
     width: 100%;
@@ -93,19 +110,9 @@
     grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 
     span{
-        font-size: 1.5rem;
-        min-width: 3rem;
-        min-height: 3rem;
-
         display: flex;
         justify-content: center;
         align-items: center;
-
-        &:active{
-            background-color: black;
-            color: white;
-        }
-
         &:nth-child(n){
             border: 1px solid black;
         }
