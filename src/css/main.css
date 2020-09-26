@@ -165,4 +165,8 @@ input:active {
 .main_board span:nth-child(n) {
   border: 1px solid black;
 }
+
+.main_board--selected {
+  background-color: #8682af;
+}
 /*# sourceMappingURL=main.css.map */
