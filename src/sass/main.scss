@@ -47,8 +47,12 @@ input{
 
 .navbar_button--regen{
     margin-right: 0.5em;
-    font-size: 1.4rem;
+    padding: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-size: 1.2rem;
     border: none;
+    border-radius: 8%;
 
     background-color: black;
     color: white;
@@ -115,8 +119,13 @@ input{
         align-items: center;
         &:nth-child(n){
             border: 1px solid black;
+            background-color: grey;
         }
     }
+}
+
+.main_board--input{
+    background-color: transparent;
 }
 
 .main_board--selected{

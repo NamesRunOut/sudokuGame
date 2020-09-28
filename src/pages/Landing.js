@@ -1,17 +1,25 @@
 import React, {useState, useEffect} from 'react'
 
 import '../css/main.css'
+import '../sass/main.css'
 
 import Navbar from '../layout/Navbar'
 import Main from '../layout/Main'
 
 import Timer from '../hooks/Timer'
+import {Sudoku, Solution} from '../hooks/Sudoku.js'
 
 function Landing(){
    // const {time, reset, start, stop} = Timer()
     const [time, setTimer] = useState(0);
     const [isActive, setIsActive] = useState(true);
     Timer(time, setTimer, isActive)
+
+    const {selected, setSelected, sudoku, setSudoku, board, setBoard} = Sudoku()
+
+    const {solution, setSolution} = Solution()
+
+    // TODO have is so everything doesnt re render every time a timer ticks
 
     const reset = () => {
         setTimer(0);
@@ -32,9 +40,21 @@ function Landing(){
                 stop={stop} 
                 start={start}
                 reset={reset}
+                setSolution={setSolution}
+                setBoard={setBoard}
+                setSudoku={setSudoku}
+                setSolution={setSolution}
                 />
             <Main
-                time={time} />
+                time={time}
+                solution={solution}
+                selected={selected}
+                setSelected={setSelected}
+                sudoku={sudoku}
+                setSudoku={setSudoku}
+                board={board}
+                setBoard={setBoard}
+                />
         </div>
     )
 }

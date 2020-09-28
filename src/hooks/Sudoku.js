@@ -28,4 +28,9 @@ const [board, setBoard] = useState([
   return {selected, setSelected, sudoku, setSudoku, board, setBoard}
 }
 
-export default Sudoku
+const Solution = () => {
+    const [solution, setSolution] = useState(null);
+    return {solution, setSolution}
+}
+
+export {Sudoku, Solution}

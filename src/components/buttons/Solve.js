@@ -1,15 +1,19 @@
 import React from 'react'
 
 import Solver from '../../algorithms/sudokuSolver'
-import Sudoku from '../../hooks/Sudoku.js'
+import {Sudoku} from '../../hooks/Sudoku.js'
 
-const Solve = ({stop}) => {
+const Solve = ({stop, setSolution}) => {
     const {sudoku} = Sudoku()
 
     const clickHandler = () =>  {
         stop();
-        if(Solver(sudoku)) console.log('ok')
-        else alert("unable to solve this board")
+        let response = Solver(sudoku);
+        if(response!="error") {
+            console.log('ok')
+            setSolution(response)
+        }
+        else console.log("couldn't solve this board")
     }
 
     return (

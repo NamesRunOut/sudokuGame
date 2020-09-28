@@ -1,16 +1,19 @@
 import React from 'react'
 
-const Timer = () => {
+const Numpad = ({selected, board, setBoard}) => {
 
   const handleClick = (val) => {
-    if (document.querySelector(".main_board--selected")===undefined) return;
+    if (document.querySelector(".main_board--selected")===undefined || selected===null || selected===undefined) return;
     document.querySelector(".main_board--selected").value=val;
+
+     let tmp = board;
+     tmp[selected] = val;
+     setBoard(tmp);
+     //console.log(board)
 
     let ev2 = new Event('click');
     document.querySelector(".main_board--selected").dispatchEvent(ev2);
-    //if (document.querySelector(".main_board--selected")!=undefined) 
-     // document.querySelector(".main_board--selected").value=val;
-   // console.log(val, tmp[selected], board)
+
   }
 
   return(
@@ -28,4 +31,4 @@ const Timer = () => {
   )
 }
 
-export default Timer;
+export default Numpad;
