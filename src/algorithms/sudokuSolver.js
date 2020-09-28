@@ -1,8 +1,6 @@
-class sudokuSolver {
-    print(a){
-        // print method
-    }
-    ifSafe(a, h, w, num){
+let board = []
+
+function ifSafe(a, h, w, num){
         for (let i=0;i<9;i++){
             if (a[h][i]==num) return false;
         }
@@ -17,15 +15,15 @@ class sudokuSolver {
             }
         }
         return true;
-    }
+}
     
-    solve(a){
+function solve(){
         let row=-1;
         let col=-1;
         let empty=true;
         for (let i=0;i<9;i++){
             for (let j=0;j<9;j++){
-                if (a[i][j]==0){
+                if (board[i][j]==0){
                     row=i;
                     col=j;
                     empty=false;
@@ -39,13 +37,17 @@ class sudokuSolver {
 
         for (let i=1;i<=9;i++){
             if (ifSafe(a, row, col, i)) {
-                a[row][col]=i;
-                if (solve(a)) return true;
-                else a[row][col]=0;
+                board[row][col]=i;
+                if (solve()) return true;
+                else board[row][col]=0;
             }
         }
-        return false;
-    }
+    return false;
 }
 
-export default sudokuSolver;
+function getSolved(board){
+    let b2d = [[]];
+    if (solve()) return board
+}
+
+export default getSolved;
