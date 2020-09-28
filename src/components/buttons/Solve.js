@@ -1,9 +1,19 @@
 import React from 'react'
 
-const Solve = ({stopTime}) => {
+import Solver from '../../algorithms/sudokuSolver'
+import Sudoku from '../../hooks/Sudoku.js'
+
+const Solve = ({stop}) => {
+    const {sudoku} = Sudoku()
+
+    const clickHandler = () =>  {
+        stop();
+        if(Solver(sudoku)) console.log('ok')
+        else alert("unable to solve this board")
+    }
 
     return (
-        <button className="navbar_button--solve" onClick={stopTime}>Solve</button>
+        <button className="navbar_button--solve" onClick={clickHandler}>Solve</button>
     )
 }
 

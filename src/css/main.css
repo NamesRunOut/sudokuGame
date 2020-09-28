@@ -7,6 +7,24 @@
   font-family: bahnschrift;
 }
 
+input, span {
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+}
+
+input {
+  text-align: center;
+  caret-color: transparent;
+  border: 1px solid black;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+input:active {
+  background-color: black;
+}
+
 .navbar {
   position: relative;
   width: 100%;
@@ -133,9 +151,6 @@
 }
 
 .main_board span {
-  font-size: 1.5rem;
-  min-width: 3rem;
-  min-height: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -147,12 +162,11 @@
           align-items: center;
 }
 
-.main_board span:active {
-  background-color: black;
-  color: white;
-}
-
 .main_board span:nth-child(n) {
   border: 1px solid black;
+}
+
+.main_board--selected {
+  background-color: #8682af;
 }
 /*# sourceMappingURL=main.css.map */
