@@ -40,6 +40,7 @@ function Landing(){
                 stop={stop} 
                 start={start}
                 reset={reset}
+                sudoku={sudoku}
                 setSolution={setSolution}
                 setBoard={setBoard}
                 setSudoku={setSudoku}

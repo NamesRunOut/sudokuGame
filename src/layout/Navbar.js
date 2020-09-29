@@ -17,6 +17,7 @@ const Navbar = (props) => {
                 />
             <Solve
                 stop={props.stop}
+                sudoku={props.sudoku}
                 setSolution={props.setSolution}
                 />
             <Contact className="navbar_contact" aclass="navbar_button--contact" />

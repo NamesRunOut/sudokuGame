@@ -3,11 +3,11 @@ import React from 'react'
 import Solver from '../../algorithms/sudokuSolver'
 import {Sudoku} from '../../hooks/Sudoku.js'
 
-const Solve = ({stop, setSolution}) => {
-    const {sudoku} = Sudoku()
+const Solve = ({stop, sudoku, setSolution}) => {
 
     const clickHandler = () =>  {
         stop();
+        //console.log("current", sudoku)
         let response = Solver(sudoku);
         if(response!=='error') {
             //console.log('ok')

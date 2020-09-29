@@ -11,6 +11,11 @@ let i = 0;
 
 const handleClick = (event) => {
     const {name} = event.target;
+    if (document.getElementsByName(selected)[0]!=undefined && document.getElementsByName(selected)[0].name===name) {
+        setSelected(null);
+        document.getElementsByName(selected)[0].className="main_board--input";
+        return;
+    }
     if (document.getElementsByName(selected)[0]!=undefined) document.getElementsByName(selected)[0].className="main_board--input";
     setSelected(name);
     event.target.className="main_board--input-selected"
@@ -47,7 +52,7 @@ board.map(
 
 useEffect(() => {
     // smh after render, check for win conditions
-    console.log(board, selected)
+    console.log(board, sudoku)
   }, [selected]);
 
   return(

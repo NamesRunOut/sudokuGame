@@ -16,7 +16,7 @@ function ifSafe(a, h, w, num){
         }
         return true;
 }
-    
+
 function solve(board){
         let row=-1;
         let col=-1;
@@ -55,13 +55,15 @@ function getSolved(board){
           b2d[i][j] = board[bi++]
         }
     }
-    //console.log(b2d)
+    //console.log(board, b2d)
     if (solve(b2d)) {
         bi=0;
+        //console.log(solution)
         for (let i=0;i<9;i++){
             for (let j=0;j<9;j++){
-              if(solution[i][j]!==undefined) response[bi] = solution[i][j]; //sometimes bugs out and assigns the wrong thing
-              else response[bi]=b2d[i][j]
+              //if(solution[i][j]!==undefined) response[bi] = solution[i][j]; // bugged, doesnt throw error, chrch beginnings of array
+              //else
+              response[bi]=b2d[i][j]
               bi++;
             }
         }
