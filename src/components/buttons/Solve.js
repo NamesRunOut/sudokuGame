@@ -9,11 +9,11 @@ const Solve = ({stop, setSolution}) => {
     const clickHandler = () =>  {
         stop();
         let response = Solver(sudoku);
-        if(response!="error") {
-            console.log('ok')
+        if(response!=='error') {
+            //console.log('ok')
             setSolution(response)
         }
-        else console.log("couldn't solve this board")
+        else alert("couldn't solve this board")
     }
 
     return (

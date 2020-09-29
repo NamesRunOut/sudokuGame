@@ -4,7 +4,7 @@ const Sudoku = () => {
 const [selected, setSelected] = useState(null);
 
 const [sudoku, setSudoku] = useState([
-    0,0,1,9,8,4,7,6,0,
+    0,1,1,9,8,4,7,6,0,
     6,0,0,0,5,7,0,0,0,
     8,0,7,0,1,0,0,0,0,
     9,6,0,3,0,8,1,0,5,

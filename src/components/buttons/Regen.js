@@ -7,7 +7,7 @@ const Regen = ({reset, start, setSudoku, setBoard, setSolution}) => {
     const clickHandler = () => {
         reset();
         setSolution(null)
-        //console.log(Generator())
+        console.log(Generator())
         setSudoku([
                      5,0,1,9,8,4,7,6,0,
                      6,0,0,0,5,7,0,0,0,

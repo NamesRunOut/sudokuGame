@@ -60,7 +60,7 @@ function getSolved(board){
         bi=0;
         for (let i=0;i<9;i++){
             for (let j=0;j<9;j++){
-              if(solution[i][j]!==undefined) response[bi] = solution[i][j];
+              if(solution[i][j]!==undefined) response[bi] = solution[i][j]; //sometimes bugs out and assigns the wrong thing
               else response[bi]=b2d[i][j]
               bi++;
             }

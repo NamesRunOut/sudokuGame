@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: darkblue;
+  background-color: #171A21;
 }
 
 input, span {
@@ -20,13 +20,9 @@ input, span {
 input {
   text-align: center;
   caret-color: transparent;
-  border: 1px solid black;
+  border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
-}
-
-input:active {
-  background-color: black;
 }
 
 .navbar {
@@ -75,7 +71,7 @@ input:active {
 
 .navbar_button--solve {
   border: none;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 
 .main {
@@ -98,6 +94,7 @@ input:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #92BCEA;
   font-size: 2rem;
   padding: 0.5em;
 }
@@ -127,12 +124,14 @@ input:active {
 }
 
 .main_numpad span {
-  border: 1px solid black;
+  border: 1px solid #AFB3F7;
   border-radius: 100%;
   margin: 0.5em;
   font-size: 1.5rem;
   min-width: 3rem;
   min-height: 3rem;
+  padding: 0.2em;
+  color: #AFB3F7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,7 +144,7 @@ input:active {
 }
 
 .main_numpad span:hover {
-  background-color: black;
+  background-color: #7A93AC;
   color: white;
 }
 
@@ -156,6 +155,7 @@ input:active {
   -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 2px;
 }
 
 .main_board span {
@@ -168,18 +168,117 @@ input:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.main_board span:nth-child(n) {
-  border: 1px solid black;
-  background-color: grey;
+  background-color: #283246;
 }
 
 .main_board--input {
-  background-color: transparent;
+  background-color: #1b1f27;
+  color: #AFB3F7;
 }
 
-.main_board--selected {
-  background-color: #8682af;
+.main_board--disabled {
+  background-color: #283246;
+  color: #92BCEA;
+}
+
+.main_board--input-selected {
+  background-color: #7A93AC;
+  color: #283246;
+}
+
+[name='2'], [name='11'], [name='20'] {
+  border-right: 1px solid black;
+}
+
+[name='18'], [name='19'], [name='20'] {
+  border-bottom: 1px solid black;
+}
+
+[name='5'], [name='14'], [name='23'] {
+  border-right: 1px solid black;
+}
+
+[name='21'], [name='22'], [name='23'] {
+  border-bottom: 1px solid black;
+}
+
+[name='3'], [name='12'], [name='21'] {
+  border-left: 1px solid black;
+}
+
+[name='24'], [name='25'], [name='26'] {
+  border-bottom: 1px solid black;
+}
+
+[name='6'], [name='15'], [name='24'] {
+  border-left: 1px solid black;
+}
+
+[name='27'], [name='28'], [name='29'] {
+  border-top: 1px solid black;
+}
+
+[name='29'], [name='38'], [name='47'] {
+  border-right: 1px solid black;
+}
+
+[name='45'], [name='46'], [name='47'] {
+  border-bottom: 1px solid black;
+}
+
+[name='30'], [name='31'], [name='32'] {
+  border-top: 1px solid black;
+}
+
+[name='32'], [name='41'], [name='50'] {
+  border-right: 1px solid black;
+}
+
+[name='48'], [name='49'], [name='50'] {
+  border-bottom: 1px solid black;
+}
+
+[name='30'], [name='39'], [name='48'] {
+  border-left: 1px solid black;
+}
+
+[name='33'], [name='34'], [name='35'] {
+  border-top: 1px solid black;
+}
+
+[name='51'], [name='52'], [name='53'] {
+  border-bottom: 1px solid black;
+}
+
+[name='33'], [name='42'], [name='51'] {
+  border-left: 1px solid black;
+}
+
+[name='54'], [name='55'], [name='56'] {
+  border-top: 1px solid black;
+}
+
+[name='56'], [name='65'], [name='74'] {
+  border-right: 1px solid black;
+}
+
+[name='57'], [name='58'], [name='59'] {
+  border-top: 1px solid black;
+}
+
+[name='59'], [name='68'], [name='77'] {
+  border-right: 1px solid black;
+}
+
+[name='57'], [name='66'], [name='75'] {
+  border-left: 1px solid black;
+}
+
+[name='60'], [name='61'], [name='62'] {
+  border-top: 1px solid black;
+}
+
+[name='60'], [name='69'], [name='78'] {
+  border-left: 1px solid black;
 }
 /*# sourceMappingURL=main.css.map */

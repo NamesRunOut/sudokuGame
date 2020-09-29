@@ -13,39 +13,41 @@ const handleClick = (event) => {
     const {name} = event.target;
     if (document.getElementsByName(selected)[0]!=undefined) document.getElementsByName(selected)[0].className="main_board--input";
     setSelected(name);
-    event.target.className="main_board--selected"
+    event.target.className="main_board--input-selected"
 }
 
 const handleChange = (event) => {
     const {name, value} = event.target;
     if (name!=null && name!=undefined) {
         let tmp = board;
-        tmp[name] = parseInt(value, 10);
+        tmp[name] = parseInt(value%10, 10);
         setBoard(tmp);
     }
-    event.target=''
 }
 
 const mapping = solution===null ?
 board.map(
     element => {
-        i++
+        i++;
         if (element === 0 || sudoku[i-1] === 0) {
-            //return <input onChange={handleChange} onClick={handleClick} name={i-1} key={i-1} />
             return <input onChange={handleChange} onClick={handleClick} className="main_board--input" name={i-1} key={i-1} value={board[i-1] === 0 ? '' : board[i-1]} />
         }
-        else return <span key={i-1}>{element}</span>
+        else return <span className="main_board--disabled" name={i-1} key={i-1}>{element}</span>
     }
 )
 : solution.map(
-    element => {return <span key={i++}>{element}</span>}
+    element => {
+        i++;
+        if (sudoku[i-1] === 0) {
+            return <input onChange={handleChange} onClick={handleClick} className="main_board--input" name={i-1} key={i-1} value={element} />
+        }
+        else return <span className="main_board--disabled" name={i-1} key={i-1}>{element}</span>
+    }
 )
 
-
 useEffect(() => {
-    // smh after render, check for win conditions?
-    // using numpad doest save to board
-   // console.log(board, selected)
+    // smh after render, check for win conditions
+    console.log(board, selected)
   }, [selected]);
 
   return(

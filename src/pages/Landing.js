@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
+//import '../sass/main.css'
 import '../css/main.css'
-import '../sass/main.css'
 
 import Navbar from '../layout/Navbar'
 import Main from '../layout/Main'
@@ -35,7 +35,7 @@ function Landing(){
     }
 
     return(
-        <div>
+        <>
             <Navbar 
                 stop={stop} 
                 start={start}
@@ -55,7 +55,7 @@ function Landing(){
                 board={board}
                 setBoard={setBoard}
                 />
-        </div>
+        </>
     )
 }
 

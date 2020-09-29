@@ -3,17 +3,13 @@ import React from 'react'
 const Numpad = ({selected, board, setBoard}) => {
 
   const handleClick = (val) => {
-    if (document.querySelector(".main_board--selected")===undefined || selected===null || selected===undefined) return;
-    document.querySelector(".main_board--selected").value=val;
+    if (document.querySelector(".main_board--input-selected")===undefined || document.querySelector(".main_board--input-selected")===null || selected===null || selected===undefined) return;
+    document.querySelector(".main_board--input-selected").value=val;
 
      let tmp = board;
      tmp[selected] = val;
      setBoard(tmp);
      //console.log(board)
-
-    let ev2 = new Event('click');
-    document.querySelector(".main_board--selected").dispatchEvent(ev2);
-
   }
 
   return(
