@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect} from 'react'
 
-import {Sudoku} from '../../hooks/Sudoku.js'
 import check from '../../algorithms/checker.js'
 
 import { motion } from "framer-motion"
@@ -27,18 +26,22 @@ const item = {
     }
 }
 
-const solutionItem = {
-    hidden: {
-        x: -20, opacity: 0
-    },
-    visible: {
-        x:0, opacity: 1,
-        transition: {
-            type: "spring",
-            stiffness: 260,
-            damping: 20
-          }
+const solutionItem = (delay) => {
+    const item = {
+        hidden: {
+            y: -100, opacity: 0
+        },
+        visible: {
+            y:0, opacity: 1,
+            transition: {
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+                delay: delay
+            }
+        }
     }
+    return item;
 }
 
 const Board = ({selected, setSelected, sudoku, board, setBoard, solution}) => {
@@ -48,19 +51,19 @@ let i = 0;
 
 const handleClick = (event) => {
     const {name} = event.target;
-    if (document.getElementsByName(selected)[0]!=undefined && document.getElementsByName(selected)[0].name===name) {
+    if (document.getElementsByName(selected)[0]!==undefined && document.getElementsByName(selected)[0].name===name) {
         setSelected(null);
         document.getElementsByName(selected)[0].className="main_board--input";
         return;
     }
-    if (document.getElementsByName(selected)[0]!=undefined) document.getElementsByName(selected)[0].className="main_board--input";
+    if (document.getElementsByName(selected)[0]!==undefined) document.getElementsByName(selected)[0].className="main_board--input";
     setSelected(name);
     event.target.className="main_board--input-selected"
 }
 
 const handleChange = (event) => {
     const {name, value} = event.target;
-    if (name!=null && name!=undefined) {
+    if (name!==null && name!==undefined) {
         let tmp = board;
         tmp[name] = parseInt(value%10, 10);
         setBoard(tmp);
@@ -81,17 +84,16 @@ board.map(
     element => {
         i++;
         if (sudoku[i-1] === 0) {
-            return <motion.input variants={solutionItem} onChange={handleChange} onClick={handleClick} className="main_board--input" name={i-1} key={i-1} value={element} />
+            return <motion.input variants={solutionItem(i/90)} onChange={handleChange} onClick={handleClick} className="main_board--input" name={i-1} key={i-1} value={element} />
         }
         else return <span className="main_board--disabled" name={i-1} key={i-1}>{element}</span>
     }
 )
 
 useEffect(() => {
-    // smh after render, check for win conditions
+    // smh after render
     if (check(board)) alert("Congratulations!")
-    //console.log(board, sudoku)
-  }, [selected]);
+  }, [selected, board]);
 
   return(
         <motion.div 

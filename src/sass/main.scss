@@ -20,7 +20,6 @@ input, span{
 input{
     text-align: center;
     caret-color: transparent;
-    //border: 1px solid $primary;
     border: none;
     box-shadow: none;
 }
@@ -41,15 +40,34 @@ input{
 
 .navbar_contact{
     position: absolute;
-    top: 0.5em;
     right: 0.5em;
+    top: 0.5em;
+
+    @include center;
 }
 
 .navbar_button--contact{
     margin: 0.5em;
+    text-decoration: none;
 
-    img{
-        border-radius: 100%;
+    &:link {
+        color: $faded;
+    }
+
+    &:visited {
+        color: $secondary;
+    }
+
+    &:hover {
+        color: $primary;
+    }
+
+    &:active {
+        color: $accent;
+    }
+
+    img {
+        border-radius: 5%;
     }
 }
 
@@ -83,7 +101,7 @@ input{
 
     font-size: 2rem;
     padding: 0.5em;
-    margin-top: 1.5em;
+    //margin-top: 0.5em;
     margin-bottom: 1.5em;
 }
 
@@ -124,9 +142,6 @@ input{
     grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 2px;
     margin-bottom: 2em;
-    //color: $primary;
-    //border-radius: 5%;
-    //border: 1px solid $primary;
 
     span{
         @include center;
@@ -148,6 +163,17 @@ input{
 .main_board--input-selected{
     background-color: $secondary;
     color: $faded;
+}
+
+@media (max-width: 768px) {
+    input, span{
+        font-size: 1.2rem;
+        width: 2rem;
+        height: 2rem;
+    }
+    .navbar_contact{
+        position: relative;
+    }
 }
 
 //[name='0'],  [name='1'],  [name='2']  { border-top:    $border_thick; }

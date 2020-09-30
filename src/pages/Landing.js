@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
 //import '../sass/main.css'
 import '../css/main.css'
@@ -20,7 +20,7 @@ function Landing(){
     const {solution, setSolution} = Solution()
 
     // TODO have is so everything doesnt re render every time a timer ticks
-
+    // TODO local storage to save current game progres
     const reset = () => {
         setTimer(0);
         setIsActive(false);
@@ -44,7 +44,6 @@ function Landing(){
                 setSolution={setSolution}
                 setBoard={setBoard}
                 setSudoku={setSudoku}
-                setSolution={setSolution}
                 />
             <Main
                 time={time}

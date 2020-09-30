@@ -46,16 +46,42 @@ input {
 
 .navbar_contact {
   position: absolute;
-  top: 0.5em;
   right: 0.5em;
+  top: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .navbar_button--contact {
   margin: 0.5em;
+  text-decoration: none;
+}
+
+.navbar_button--contact:link {
+  color: #283246;
+}
+
+.navbar_button--contact:visited {
+  color: #7A93AC;
+}
+
+.navbar_button--contact:hover {
+  color: #92BCEA;
+}
+
+.navbar_button--contact:active {
+  color: #AFB3F7;
 }
 
 .navbar_button--contact img {
-  border-radius: 100%;
+  border-radius: 5%;
 }
 
 .navbar_button--regen {
@@ -99,7 +125,6 @@ input {
   color: #92BCEA;
   font-size: 2rem;
   padding: 0.5em;
-  margin-top: 1.5em;
   margin-bottom: 1.5em;
 }
 
@@ -189,6 +214,17 @@ input {
 .main_board--input-selected {
   background-color: #7A93AC;
   color: #283246;
+}
+
+@media (max-width: 768px) {
+  input, span {
+    font-size: 1.2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+  .navbar_contact {
+    position: relative;
+  }
 }
 
 [name='2'], [name='11'], [name='20'] {
