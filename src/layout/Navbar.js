@@ -8,6 +8,7 @@ const Navbar = (props) => {
    // console.log('navbar rendered')
     return (
         <div className="navbar">
+            <div>
             <Regen
                 start={props.start}
                 reset={props.reset}
@@ -20,6 +21,7 @@ const Navbar = (props) => {
                 sudoku={props.sudoku}
                 setSolution={props.setSolution}
                 />
+            </div>
             <Contact className="navbar_contact" aclass="navbar_button--contact" />
         </div>
     )

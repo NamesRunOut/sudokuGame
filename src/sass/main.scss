@@ -31,7 +31,7 @@ input{
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     margin: auto;
 
@@ -39,9 +39,9 @@ input{
 }
 
 .navbar_contact{
-    position: absolute;
+   /* position: absolute;
     right: 0.5em;
-    top: 0.5em;
+    top: 0.5em;*/
 
     @include center;
 }
@@ -172,7 +172,7 @@ input{
         height: 2rem;
     }
     .navbar_contact{
-        position: relative;
+        //position: relative;
     }
 }
 
