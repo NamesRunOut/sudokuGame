@@ -5,7 +5,7 @@ import Board from '../components/board/Board'
 import Numpad from '../components/board/Numpad'
 
 const Main = (props) => {
-    console.log('main rendered')
+    //console.log('main rendered')
     return (
         <div className="main">
             <div className="main_timer">

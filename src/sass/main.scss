@@ -34,8 +34,9 @@ input{
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
+    margin: auto;
 
-    background-color: white;
+    background-color: $bg;
 }
 
 .navbar_contact{
@@ -54,19 +55,20 @@ input{
 
 .navbar_button--regen{
     margin-right: 0.5em;
-    padding: 0.2em;
+    padding: 0.25em;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     border: none;
-    border-radius: 8%;
 
-    background-color: black;
-    color: white;
+    background-color: $faded;
+    color: $accent;
 }
 
 .navbar_button--solve{
     border: none;
+    color: $primary;
+    font-size: 1.2rem;
     background-color: transparent;
 }
 
@@ -81,19 +83,21 @@ input{
 
     font-size: 2rem;
     padding: 0.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 .main_area{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
 }
 
 .main_numpad{
-    margin: auto;
     display: grid;
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    margin: auto;
 
     span{
         border: 1px solid $accent;
@@ -119,6 +123,7 @@ input{
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 2px;
+    margin-bottom: 2em;
     //color: $primary;
     //border-radius: 5%;
     //border: 1px solid $primary;

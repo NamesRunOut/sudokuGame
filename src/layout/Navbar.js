@@ -5,7 +5,7 @@ import Regen from '../components/buttons/Regen'
 import Solve from '../components/buttons/Solve'
 
 const Navbar = (props) => {
-    console.log('navbar rendered')
+   // console.log('navbar rendered')
     return (
         <div className="navbar">
             <Regen
