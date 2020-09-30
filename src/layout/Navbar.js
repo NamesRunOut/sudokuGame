@@ -8,7 +8,7 @@ const Navbar = (props) => {
    // console.log('navbar rendered')
     return (
         <div className="navbar">
-            <div>
+            <div className="navbar_actions">
             <Regen
                 start={props.start}
                 reset={props.reset}

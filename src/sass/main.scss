@@ -27,10 +27,11 @@ input{
 .navbar{
     position: relative;
     width: 100%;
-    padding: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     justify-content: space-between;
     align-items: center;
     margin: auto;
@@ -39,11 +40,13 @@ input{
 }
 
 .navbar_contact{
-   /* position: absolute;
-    right: 0.5em;
-    top: 0.5em;*/
-
+    margin: auto;
+    flex-wrap: wrap;
     @include center;
+}
+
+.navbar_actions{
+    margin: auto;
 }
 
 .navbar_button--contact{
@@ -76,18 +79,28 @@ input{
     padding: 0.25em;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    font-size: 1.4rem;
+    font-size: 1.32rem;
     border: none;
 
-    background-color: $faded;
+    background-color: transparent;
+    border: 1px solid $accent;
     color: $accent;
+
+    &:hover{
+        background-color: $secondary;
+        color: white;
+    }
 }
 
 .navbar_button--solve{
     border: none;
-    color: $primary;
+    color: $accent;
     font-size: 1.2rem;
     background-color: transparent;
+
+    &:hover{
+        color: white;
+    }
 }
 
 .main{
@@ -100,7 +113,8 @@ input{
     color: $primary;
 
     font-size: 2rem;
-    padding: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     //margin-top: 0.5em;
     margin-bottom: 1.5em;
 }
@@ -170,9 +184,6 @@ input{
         font-size: 1.2rem;
         width: 2rem;
         height: 2rem;
-    }
-    .navbar_contact{
-        //position: relative;
     }
 }
 
