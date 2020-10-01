@@ -70,7 +70,12 @@ input{
     }
 
     img {
-        border-radius: 5%;
+        border-radius: 15%;
+        padding: 1px;
+
+        &:hover {
+            background-color: $primary;
+        }
     }
 }
 

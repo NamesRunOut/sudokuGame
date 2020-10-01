@@ -86,7 +86,12 @@ input {
 }
 
 .navbar_button--contact img {
-  border-radius: 5%;
+  border-radius: 15%;
+  padding: 1px;
+}
+
+.navbar_button--contact img:hover {
+  background-color: #92BCEA;
 }
 
 .navbar_button--regen {

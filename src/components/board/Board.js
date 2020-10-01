@@ -75,7 +75,14 @@ board.map(
     element => {
         i++;
         if (element === 0 || sudoku[i-1] === 0) {
-            return <input onfocus="blur();" onChange={handleChange} onClick={handleClick} className="main_board--input" name={i-1} key={i-1} value={board[i-1] === 0 ? '' : board[i-1]} />
+            return <input 
+                //onFocus="blur()" // have it so keyboard doesnt appear on mobile
+                onChange={handleChange} 
+                onClick={handleClick} 
+                className="main_board--input" 
+                name={i-1} 
+                key={i-1} 
+                value={board[i-1] === 0 ? '' : board[i-1]} />
         }
         else return <motion.span variants={item} className="main_board--disabled" name={i-1} key={i-1}>{element}</motion.span>
     }
@@ -84,7 +91,9 @@ board.map(
     element => {
         i++;
         if (sudoku[i-1] === 0) {
-            return <motion.input onfocus="blur();" variants={solutionItem(i/90)} onChange={handleChange} onClick={handleClick} className="main_board--input" name={i-1} key={i-1} value={element} />
+            return <motion.input 
+                        //onFocus="blur()" 
+                        variants={solutionItem(i/110)} onChange={handleChange} onClick={handleClick} className="main_board--input" name={i-1} key={i-1} value={element} />
         }
         else return <span className="main_board--disabled" name={i-1} key={i-1}>{element}</span>
     }

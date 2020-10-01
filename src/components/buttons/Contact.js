@@ -2,7 +2,7 @@ import React from 'react'
 
 import github from '../../assets/contact/github.svg'
 import twitter from '../../assets/contact/twitter.svg'
-import gmail from '../../assets/contact/gmail.svg'
+//import gmail from '../../assets/contact/gmail.svg'
 
 const Contact = (props) => {
     return(
