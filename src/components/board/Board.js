@@ -45,7 +45,6 @@ const solutionItem = (delay) => {
 }
 
 const Board = ({selected, setSelected, sudoku, board, setBoard, solution}) => {
-//const [selected, setSelected] = useState(null);
 //const {selected, setSelected, sudoku, board, setBoard} = Sudoku()
 let i = 0;
 
@@ -76,7 +75,7 @@ board.map(
         i++;
         if (element === 0 || sudoku[i-1] === 0) {
             return <input 
-                //onFocus="blur()" // have it so keyboard doesnt appear on mobile
+                readOnly // TODO replace with something that prevents keyboard popup on mobile
                 onChange={handleChange} 
                 onClick={handleClick} 
                 className="main_board--input" 
@@ -92,8 +91,14 @@ board.map(
         i++;
         if (sudoku[i-1] === 0) {
             return <motion.input 
-                        //onFocus="blur()" 
-                        variants={solutionItem(i/110)} onChange={handleChange} onClick={handleClick} className="main_board--input" name={i-1} key={i-1} value={element} />
+                        readOlny
+                        variants={solutionItem(i/110)} 
+                        onChange={handleChange} 
+                        onClick={handleClick} 
+                        className="main_board--input" 
+                        name={i-1} 
+                        key={i-1} 
+                        value={element} />
         }
         else return <span className="main_board--disabled" name={i-1} key={i-1}>{element}</span>
     }
