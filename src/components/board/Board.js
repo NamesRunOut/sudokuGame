@@ -83,7 +83,13 @@ board.map(
                 key={i-1} 
                 value={board[i-1] === 0 ? '' : board[i-1]} />
         }
-        else return <motion.span variants={item} className="main_board--disabled" name={i-1} key={i-1}>{element}</motion.span>
+        else return <motion.span 
+                        variants={item} 
+                        className="main_board--disabled" 
+                        name={i-1} 
+                        key={i-1}>
+                            {element}
+                    </motion.span>
     }
 )
 : solution.map(
@@ -91,7 +97,7 @@ board.map(
         i++;
         if (sudoku[i-1] === 0) {
             return <motion.input 
-                        readOlny
+                        readOnly
                         variants={solutionItem(i/110)} 
                         onChange={handleChange} 
                         onClick={handleClick} 
@@ -100,12 +106,20 @@ board.map(
                         key={i-1} 
                         value={element} />
         }
-        else return <span className="main_board--disabled" name={i-1} key={i-1}>{element}</span>
+        else return <span 
+                        className="main_board--disabled" 
+                        name={i-1} 
+                        key={i-1}>
+                            {element}
+                    </span>
     }
 )
 
 useEffect(() => {
     // smh after render
+    // TODO fix win cons
+    // TODO manifest icon prettier on mobile
+    // TODO remove active orange borders on inputs
     if (check(board)) alert("Congratulations!")
   }, [selected, board]);
 
