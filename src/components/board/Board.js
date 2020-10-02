@@ -3,46 +3,9 @@ import React, {useEffect} from 'react'
 import check from '../../algorithms/checker.js'
 
 import { motion } from "framer-motion"
+import { container, item, solutionItem } from '../../animations/pieces.js'
 
 // timer functs in timer, otherwise whole other components update
-
-const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.1
-      }
-    }
-}
-   
-const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
-}
-
-const solutionItem = (delay) => {
-    const item = {
-        hidden: {
-            y: -100, opacity: 0
-        },
-        visible: {
-            y:0, opacity: 1,
-            transition: {
-                type: "spring",
-                stiffness: 260,
-                damping: 20,
-                delay: delay
-            }
-        }
-    }
-    return item;
-}
 
 const Board = ({selected, setSelected, sudoku, board, setBoard, solution, stop}) => {
 //const {selected, setSelected, sudoku, board, setBoard} = Sudoku()
