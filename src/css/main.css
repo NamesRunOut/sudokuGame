@@ -34,9 +34,9 @@ input {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -45,9 +45,9 @@ input {
 }
 
 .navbar_contact {
-  /* position: absolute;
-    right: 0.5em;
-    top: 0.5em;*/
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -221,6 +221,9 @@ input {
     font-size: 1.2rem;
     width: 2rem;
     height: 2rem;
+  }
+  .navbar_contact {
+    position: relative;
   }
 }
 

@@ -26,11 +26,12 @@ function check(board){
     let bi = 0;
     for (let i=0;i<9;i++){
         for (let j=0;j<9;j++){
+          if (board[bi]===0) return false;
           b2d[i][j] = board[bi++]
         }
     }
     for (let i=0;i<9;i++){
-        for (let j=0;j<9;j++){
+        for (let j=0;j<9;j++){        
           if(!ifSafe(b2d, i, j, b2d[i][j])) return false;
         }
     }

@@ -27,10 +27,11 @@ input{
 .navbar{
     position: relative;
     width: 100%;
-    padding: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     justify-content: space-between;
     align-items: center;
     margin: auto;
@@ -39,11 +40,13 @@ input{
 }
 
 .navbar_contact{
-   /* position: absolute;
-    right: 0.5em;
-    top: 0.5em;*/
-
+    margin: auto;
+    flex-wrap: wrap;
     @include center;
+}
+
+.navbar_actions{
+    margin: auto;
 }
 
 .navbar_button--contact{
@@ -67,7 +70,14 @@ input{
     }
 
     img {
-        border-radius: 5%;
+        border-radius: 15%;
+        padding: 1px;
+        max-width: 1.5rem;
+        max-height: 1.5rem;
+
+        &:hover {
+            background-color: $primary;
+        }
     }
 }
 
@@ -76,18 +86,28 @@ input{
     padding: 0.25em;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    font-size: 1.4rem;
+    font-size: 1.32rem;
     border: none;
 
-    background-color: $faded;
+    background-color: transparent;
+    border: 1px solid $accent;
     color: $accent;
+
+    &:hover{
+        background-color: $secondary;
+        color: white;
+    }
 }
 
 .navbar_button--solve{
     border: none;
-    color: $primary;
+    color: $accent;
     font-size: 1.2rem;
     background-color: transparent;
+
+    &:hover{
+        color: white;
+    }
 }
 
 .main{
@@ -100,9 +120,10 @@ input{
     color: $primary;
 
     font-size: 2rem;
-    padding: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     //margin-top: 0.5em;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
 }
 
 .main_area{
@@ -172,8 +193,14 @@ input{
         height: 2rem;
     }
     .navbar_contact{
-        //position: relative;
+        display: none;
     }
+   /* .navbar_button--regen{
+        font-size: 1rem;
+    }
+    .navbar_button--solve{
+        font-size: 1rem;
+    }*/
 }
 
 //[name='0'],  [name='1'],  [name='2']  { border-top:    $border_thick; }
