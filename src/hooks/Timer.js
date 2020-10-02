@@ -1,6 +1,22 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-const Timer = (time, setTimer, isActive) => {
+const Timer = () => {
+  const [time, setTimer] = useState(0);
+  const [isActive, setIsActive] = useState(true);
+
+  const reset = () => {
+    setTimer(0);
+    setIsActive(false);
+  }
+
+  const start = () => {
+    setIsActive(true);
+  }
+
+  const stop = () => {
+    setIsActive(false);
+  }
+
   useEffect(() => {
     let interval = null;
     if (isActive) {
@@ -12,6 +28,8 @@ const Timer = (time, setTimer, isActive) => {
     }
     return () => clearInterval(interval);
   }, [isActive, setTimer, time]);
+
+  return {time, reset, start, stop}
 };
 
 export default Timer

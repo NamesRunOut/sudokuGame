@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 const Sudoku = () => {
 const [selected, setSelected] = useState(null);
@@ -25,11 +25,19 @@ const [board, setBoard] = useState([
     0,0,0,1,0,0,0,0,4,
     0,9,6,0,0,2,5,1,0]);
 
+    useEffect(() => {
+        // save to local
+      }, [sudoku, board]);
+
   return {selected, setSelected, sudoku, setSudoku, board, setBoard}
 }
 
 const Solution = () => {
     const [solution, setSolution] = useState(null);
+
+    useEffect(() => {
+        // save to local
+      }, [solution]);
     return {solution, setSolution}
 }
 

@@ -1,7 +1,5 @@
 import React, {useEffect} from 'react'
 
-import check from '../../algorithms/checker.js'
-
 import { motion } from "framer-motion"
 import { container, item, solutionItem } from '../../animations/pieces.js'
 
@@ -83,10 +81,6 @@ useEffect(() => {
     // TODO fix win cons
     // TODO manifest icon prettier on mobile
     // TODO remove active orange borders on inputs
-    if (check(board)) {
-        stop();
-        alert("Congratulations!")
-    }
   }, [selected, board]);
 
   return(
