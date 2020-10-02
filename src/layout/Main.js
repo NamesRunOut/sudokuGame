@@ -19,6 +19,7 @@ const Main = (props) => {
                  sudoku={props.sudoku}
                  board={props.board}
                  setBoard={props.setBoard}
+                 stop={props.stop}
                  />
                 <Numpad
                     setBoard={props.setBoard}

@@ -44,7 +44,7 @@ const solutionItem = (delay) => {
     return item;
 }
 
-const Board = ({selected, setSelected, sudoku, board, setBoard, solution}) => {
+const Board = ({selected, setSelected, sudoku, board, setBoard, solution, stop}) => {
 //const {selected, setSelected, sudoku, board, setBoard} = Sudoku()
 let i = 0;
 
@@ -120,7 +120,10 @@ useEffect(() => {
     // TODO fix win cons
     // TODO manifest icon prettier on mobile
     // TODO remove active orange borders on inputs
-    if (check(board)) alert("Congratulations!")
+    if (check(board)) {
+        stop();
+        alert("Congratulations!")
+    }
   }, [selected, board]);
 
   return(

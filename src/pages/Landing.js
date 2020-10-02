@@ -54,6 +54,7 @@ function Landing(){
                 setSudoku={setSudoku}
                 board={board}
                 setBoard={setBoard}
+                stop={stop}
                 />
         </>
     )
