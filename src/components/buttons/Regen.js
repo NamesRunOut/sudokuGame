@@ -10,6 +10,8 @@ const Regen = ({reset, start, setSudoku, setBoard, setSolution}) => {
         setSolution(null);
         setSudoku([...newBoard]);
         setBoard([...newBoard]);
+        localStorage.setItem('sudoku', [...newBoard])
+        localStorage.setItem('board', [...newBoard])
         start();
     }
 
