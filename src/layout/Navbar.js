@@ -14,6 +14,7 @@ const Navbar = (props) => {
             <Check 
                 stop={props.stop}
                 board={props.board}
+                solution={props.solution}
                 />
             <Regen
                 start={props.start}

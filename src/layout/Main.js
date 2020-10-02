@@ -3,6 +3,8 @@ import React from 'react'
 import Board from '../components/board/Board'
 import Numpad from '../components/board/Numpad'
 
+import Clear from '../components/buttons/Clear'
+
 const Main = (props) => {
     //console.log('main rendered')
     return (
@@ -21,7 +23,8 @@ const Main = (props) => {
                     board={props.board}
                     selected={props.selected}
                 />
-            </div>  
+                <Clear />
+            </div> 
         </>     
     )
 }

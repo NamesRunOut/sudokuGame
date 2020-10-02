@@ -25,6 +25,10 @@ input {
           box-shadow: none;
 }
 
+input:focus {
+  outline: none;
+}
+
 .navbar {
   position: relative;
   width: 100%;
@@ -139,6 +143,19 @@ input {
 
 .navbar_button--solve:hover {
   color: white;
+}
+
+.navbar_button--clear {
+  margin: auto;
+  border: none;
+  color: #283246;
+  font-size: 1rem;
+  margin-top: 1em;
+  background-color: transparent;
+}
+
+.navbar_button--clear:hover {
+  color: #7A93AC;
 }
 
 .main {

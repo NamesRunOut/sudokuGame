@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 
 const Timer = () => {
-  const [time, setTimer] = useState(0);
+  const [time, setTimer] = useState(
+    parseInt(localStorage.getItem('time')) || 0);
   const [isActive, setIsActive] = useState(true);
 
   const reset = () => {

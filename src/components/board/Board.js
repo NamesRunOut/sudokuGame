@@ -1,12 +1,9 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 
 import { motion } from "framer-motion"
 import { container, item, solutionItem } from '../../animations/pieces.js'
 
-// timer functs in timer, otherwise whole other components update
-
-const Board = ({selected, setSelected, sudoku, board, setBoard, solution, stop}) => {
-//const {selected, setSelected, sudoku, board, setBoard} = Sudoku()
+const Board = ({selected, setSelected, sudoku, board, setBoard, solution}) => {
 let i = 0;
 
 const handleClick = (event) => {
@@ -36,7 +33,7 @@ board.map(
         i++;
         if (element === 0 || sudoku[i-1] === 0) {
             return <input 
-                readOnly // TODO replace with something that prevents keyboard popup on mobile
+                readOnly // here to prevent keyboard popup on mobile
                 onChange={handleChange} 
                 onClick={handleClick} 
                 className="main_board--input" 
@@ -75,13 +72,7 @@ board.map(
                     </span>
     }
 )
-
-useEffect(() => {
-    // smh after render
-    // TODO fix win cons
     // TODO manifest icon prettier on mobile
-    // TODO remove active orange borders on inputs
-  }, [selected, board]);
 
   return(
         <motion.div 

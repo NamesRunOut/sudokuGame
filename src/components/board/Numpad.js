@@ -1,19 +1,28 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState, useEffect} from 'react'
 
 import { motion } from "framer-motion"
 
 const Numpad = ({selected, board, setBoard}) => {
+  const [updated, setUpdated] = useState(false);
   const constraintsRef = useRef(null)
 
   const handleClick = (val) => {
     if (document.querySelector(".main_board--input-selected")===undefined || document.querySelector(".main_board--input-selected")===null || selected===null || selected===undefined) return;
     document.querySelector(".main_board--input-selected").value=val;
 
+
      let tmp = board;
      tmp[selected] = val;
      setBoard(tmp);
+     setUpdated(updated => !updated)
      //console.log(board)
   }
+      
+  useEffect(() => {
+    // store user save data
+   // localStorage.setItem('sudoku', sudoku)
+    localStorage.setItem('board', board)
+  }, [updated]);
 
   return(
     <motion.div className="main_numpad" ref={constraintsRef}>

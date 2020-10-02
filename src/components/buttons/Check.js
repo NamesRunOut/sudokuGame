@@ -2,9 +2,16 @@ import React from 'react'
 
 import check from '../../algorithms/checker'
 
-const Check = ({stop, board}) => {
+const Check = ({stop, board, solution}) => {
     const clickHandler = () => {
-        if (check(board)) {
+        if (solution!=null) {
+            if (check(solution)) {
+                stop();
+                alert("Little hamsters solved the board correctly")
+            } else {
+                alert("Error in the solving program. The board is solved incorrectly")
+            }
+        } else if (check(board)) {
             stop();
             alert("Correct!")
         } else {
