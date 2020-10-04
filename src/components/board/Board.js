@@ -72,7 +72,6 @@ board.map(
                     </span>
     }
 )
-    // TODO manifest icon prettier on mobile
 
   return(
         <motion.div 
