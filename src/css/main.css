@@ -71,10 +71,12 @@ input:focus {
 .navbar_button--contact {
   margin: 0.5em;
   text-decoration: none;
-}
-
-.navbar_button--contact:link {
+  border: none;
   color: #283246;
+  background: transparent;
+  /*&:link {
+        color: $faded;
+    }*/
 }
 
 .navbar_button--contact:visited {
@@ -271,6 +273,85 @@ input:focus {
 .main_board--input-selected {
   background-color: #7A93AC;
   color: #283246;
+}
+
+.wrapper_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #92BCEA;
+  border: 1px solid #92BCEA;
+  padding: 2em;
+}
+
+.form h1 {
+  color: #92BCEA;
+  margin-bottom: 0.5em;
+}
+
+.form_input {
+  width: 20em;
+  margin: 0.5em;
+}
+
+.form_input--textarea {
+  width: 20em;
+  margin: 0.5em;
+  padding: 0.5em;
+  font-size: 1.5rem;
+}
+
+.form_submit {
+  width: 20em;
+  font-size: 1.5rem;
+  background: transparent;
+  border: 1px solid #92BCEA;
+  padding: 0.5em;
+  color: #92BCEA;
+}
+
+.form_submit:hover {
+  background-color: #7A93AC;
+  color: white;
+}
+
+.form_back {
+  font-size: 1.1rem;
+  margin: 2em;
+  background: transparent;
+  border: none;
+  color: #AFB3F7;
+}
+
+.form_back:hover {
+  color: white;
+}
+
+.form_error {
+  color: red;
+  margin-bottom: 0.5em;
 }
 
 @media (max-width: 768px) {

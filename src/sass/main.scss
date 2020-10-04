@@ -56,10 +56,13 @@ input{
 .navbar_button--contact{
     margin: 0.5em;
     text-decoration: none;
+    border: none;
+    color: $faded;
+    background: transparent;
 
-    &:link {
+    /*&:link {
         color: $faded;
-    }
+    }*/
 
     &:visited {
         color: $secondary;
@@ -219,6 +222,69 @@ input{
 .main_board--input-selected{
     background-color: $secondary;
     color: $faded;
+}
+
+.wrapper_form{
+    @include center;
+}
+
+.form{
+    @include center;
+    flex-direction: column;
+    color: $primary;
+
+    border: 1px solid $primary;
+
+    padding: 2em;
+
+    h1{
+        color: $primary;
+        margin-bottom: 0.5em;
+    }
+}
+
+.form_input{
+    width: 20em;
+    margin: 0.5em;
+}
+
+.form_input--textarea{
+    width: 20em;
+    margin: 0.5em;
+    padding: 0.5em;
+    font-size: 1.5rem;
+}
+
+
+.form_submit{
+    width: 20em;
+    font-size: 1.5rem;
+    background: transparent;
+    border: 1px solid $primary;
+    padding: 0.5em;
+    color: $primary;
+
+    &:hover{
+        background-color: $secondary;
+        color: white;
+    }
+}
+
+.form_back{
+    font-size: 1.1rem;
+    margin: 2em;
+    background: transparent;
+    border: none;
+    color: $accent;
+
+    &:hover{
+        color: white;
+    }
+}
+
+.form_error{
+    color: red;
+    margin-bottom: 0.5em;
 }
 
 @media (max-width: 768px) {

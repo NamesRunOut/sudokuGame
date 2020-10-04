@@ -22,7 +22,7 @@ const Numpad = ({selected, board, setBoard}) => {
     // store user save data
    // localStorage.setItem('sudoku', sudoku)
     localStorage.setItem('board', board)
-  }, [updated]);
+  }, [updated, board]);
 
   return(
     <motion.div className="main_numpad" ref={constraintsRef}>

@@ -4,10 +4,10 @@ import check from '../../algorithms/checker'
 
 const Check = ({stop, board, solution}) => {
     const clickHandler = () => {
-        if (solution!=null) {
+        if (solution!==null) {
             if (check(solution)) {
                 stop();
-                alert("Little hamsters solved the board correctly")
+                alert("The soluton is correct, but how about you do it yourself next time? :)")
             } else {
                 alert("Error in the solving program. The board is solved incorrectly")
             }

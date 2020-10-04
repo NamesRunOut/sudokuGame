@@ -12,7 +12,6 @@ function Landing(){
     const {solution, setSolution} = Solution()
 
     // TODO context?
-    // TODO local storage to save current game progres
 
     return(
         <>
@@ -22,6 +21,7 @@ function Landing(){
                 setBoard={setBoard}
                 setSudoku={setSudoku}
                 board={board}
+                solution={solution}
                 />
             <Main
                 solution={solution}
