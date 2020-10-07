@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 
 import Solver from '../../algorithms/sudokuSolver'
 
-const Solve = ({stop, sudoku, setSolution}) => {
+import {SudokuContext, SolutionContext} from '../../hooks/Sudoku.js'
+
+const Solve = ({stop}) => {
+    const [, , sudoku] = useContext(SudokuContext)
+    const [, setSolution] = useContext(SolutionContext)
 
     const clickHandler = () =>  {
         stop();

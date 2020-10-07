@@ -8,31 +8,16 @@ import Navigation from '../layout/Navigation'
 import {Sudoku, Solution} from '../hooks/Sudoku.js'
 
 function Landing(){
-    const {selected, setSelected, sudoku, setSudoku, board, setBoard} = Sudoku()
-    const {solution, setSolution} = Solution()
-
-    // TODO context?
+  //  const {selected, setSelected, sudoku, setSudoku, board, setBoard} = Sudoku()
+  //  const {solution, setSolution} = Solution()
 
     return(
-        <>
-            <Navigation
-                sudoku={sudoku}
-                setSolution={setSolution}
-                setBoard={setBoard}
-                setSudoku={setSudoku}
-                board={board}
-                solution={solution}
-                />
-            <Main
-                solution={solution}
-                selected={selected}
-                setSelected={setSelected}
-                sudoku={sudoku}
-                setSudoku={setSudoku}
-                board={board}
-                setBoard={setBoard}
-                />
-        </>
+        <Sudoku>
+            <Solution>
+                <Navigation />
+                <Main />
+            </Solution>
+        </Sudoku>
     )
 }
 

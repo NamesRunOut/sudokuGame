@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 
 import check from '../../algorithms/checker'
+import {SudokuContext, SolutionContext} from '../../hooks/Sudoku.js'
 
-const Check = ({stop, board, solution}) => {
+const Check = ({stop}) => {
+    const [, , , , board] = useContext(SudokuContext)
+    const [solution] = useContext(SolutionContext)
+
     const clickHandler = () => {
         if (solution!==null) {
             if (check(solution)) {

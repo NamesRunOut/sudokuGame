@@ -13,23 +13,16 @@ const Navbar = (props) => {
             <div className="navbar_actions">
             <Check 
                 stop={props.stop}
-                board={props.board}
-                solution={props.solution}
                 />
             <Regen
                 start={props.start}
                 reset={props.reset}
-                setBoard={props.setBoard}
-                setSudoku={props.setSudoku}
-                setSolution={props.setSolution}
                 />
             <Solve
                 stop={props.stop}
-                sudoku={props.sudoku}
-                setSolution={props.setSolution}
                 />
             </div>
-            <Contact className="navbar_contact" aclass="navbar_button--contact" />
+            <Contact />
         </div>
     )
 }

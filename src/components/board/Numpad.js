@@ -1,10 +1,14 @@
-import React, {useRef, useState, useEffect} from 'react'
+import React, {useRef, useState, useEffect, useContext} from 'react'
 
 import { motion } from "framer-motion"
 
-const Numpad = ({selected, board, setBoard}) => {
+import {SudokuContext} from '../../hooks/Sudoku.js'
+
+const Numpad = () => {
   const [updated, setUpdated] = useState(false);
   const constraintsRef = useRef(null)
+
+  const [selected, , , , board, setBoard] = useContext(SudokuContext)
 
   const handleClick = (val) => {
     if (document.querySelector(".main_board--input-selected")===undefined || document.querySelector(".main_board--input-selected")===null || selected===null || selected===undefined) return;

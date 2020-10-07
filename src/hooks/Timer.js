@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react'
 
-const Timer = () => {
+export const TimerHook = () => {
   const [time, setTimer] = useState(
     parseInt(localStorage.getItem('time')) || 0);
   const [isActive, setIsActive] = useState(true);
@@ -32,5 +32,3 @@ const Timer = () => {
 
   return {time, reset, start, stop}
 };
-
-export default Timer

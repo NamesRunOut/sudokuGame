@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 
 import { motion } from "framer-motion"
 import { container, item, solutionItem } from '../../animations/pieces.js'
 
-const Board = ({selected, setSelected, sudoku, board, setBoard, solution}) => {
+import {SudokuContext, SolutionContext} from '../../hooks/Sudoku.js'
+
+const Board = () => {
+const [selected, setSelected, sudoku, , board, setBoard] = useContext(SudokuContext)
+const [solution] = useContext(SolutionContext)
 let i = 0;
 
 const handleClick = (event) => {

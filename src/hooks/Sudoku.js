@@ -1,6 +1,9 @@
-import {useState} from 'react'
+import React, {useState, createContext} from 'react'
 
-const Sudoku = () => {
+export const SudokuContext = createContext()
+export const SolutionContext = createContext()
+
+const Sudoku = (props) => {
 const [selected, setSelected] = useState(null);
 
 const [sudoku, setSudoku] = useState(
@@ -27,13 +30,24 @@ const [board, setBoard] = useState(
     0,0,0,1,0,0,0,0,4,
     0,9,6,0,0,2,5,1,0] : localStorage.getItem('board').split(",").map(Number));
 
-  return {selected, setSelected, sudoku, setSudoku, board, setBoard}
+  return (
+    <SudokuContext.Provider value={[ selected, setSelected, sudoku, setSudoku, board, setBoard ]}>
+      {props.children}
+    </SudokuContext.Provider>
+  )
+  
+  //{selected, setSelected, sudoku, setSudoku, board, setBoard}
 }
 
-const Solution = () => {
+const Solution = (props) => {
     const [solution, setSolution] = useState(null);
 
-    return {solution, setSolution}
+    return (
+      <SolutionContext.Provider value={ [solution, setSolution] }>
+        {props.children}
+      </SolutionContext.Provider>
+    )
+    //{solution, setSolution}
 }
 
 export {Sudoku, Solution}
