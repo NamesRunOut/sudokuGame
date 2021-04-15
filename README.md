@@ -10,7 +10,6 @@ Demo -  https://desolate-woodland-09821.herokuapp.com/
 * React & Hooks
 * React Context
 * React Router
-* Typescript
 * Local storage
 * Framer Motion
 * Formik & Yup
