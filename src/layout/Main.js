@@ -5,7 +5,7 @@ import Numpad from '../components/board/Numpad'
 
 import Clear from '../components/buttons/Clear'
 
-const Main = (props) => {
+const Main = () => {
     //console.log('main rendered')
 
     return (
